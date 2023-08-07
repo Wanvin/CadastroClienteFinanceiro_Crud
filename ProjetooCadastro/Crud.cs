@@ -22,7 +22,7 @@ namespace CadastroCliente
 
         public string msg = string.Empty;
 
-        public bool ClienteCadastro(DadosCadastro dadosCadastro)
+        public bool Cadastrar(DadosCadastro dadosCadastro)
         {
             
             dadosCadastro.DataCadastro = DateTime.Now;

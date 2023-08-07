@@ -38,7 +38,7 @@ namespace ProjetooCadastro
 
             try
             {
-                crud.ClienteCadastro(dadosCadastro);
+                crud.Cadastrar(dadosCadastro);
                 MessageBox.Show(crud.msg);
 
 
