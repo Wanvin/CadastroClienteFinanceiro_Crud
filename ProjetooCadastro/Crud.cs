@@ -31,8 +31,16 @@ namespace CadastroCliente
 
 
             // Comando Sql 
-            cmd.CommandText = "insert into Cliente(DataCadastro , ClienteUI, Codigo, Nome, Id, Cpf, DataNascimento, Endereco, Numero, Bairro, Cidade, Referencia, Cep, UF, Celular, Telefone Email, ContatoNome, ContatoTelefone, ContatoRelacao, ProcessUI, Processo, Tipo, Situacao, DataProcesso, Medida, Descricao, ValorServico, FormaPagamento, Parcelas, Vencimento, Pago, Pagar) " +
-                              "values(@DataCadastro, @ClienteUI, @Codigo, @Nome, @Id, @Cpf, @DataNascimento, @Endereco, @Numero, @Bairro, @Cidade, @Referencia, @Cep, @UF, @Celular, @Telefone @Email, @ContatoNome, @ContatoTelefone, @ContatoRelacao, @ProcessUI, @Processo, @Tipo, @Situacao, @DataProcesso, @Medida, @Descricao, @ValorServico, @FormaPagamento, @Parcelas, @Vencimento, @Pago, @Pagar) ";
+            cmd.CommandText = "INSERT INTO Cliente (Codigo, Nome, DataCadastro, ClienteUI, Id, Cpf, DataNascimento, Endereco, Numero, Bairro, Cidade, Referencia, Cep, UF, Celular, Telefone, Email, ContatoNome, ContatoTelefone, ContatoRelacao)" +
+                              "VALUES (@Codigo, @Nome, @DataCadastro, @ClienteUI, @Id, @Cpf, @DataNascimento, @Endereco, @Numero, @Bairro, @Cidade, @Referencia, @Cep, @UF, @Celular, @Telefone, @Email, @ContatoNome, @ContatoTelefone, @ContatoRelacao);" +
+
+                              "INSERT INTO Processo (ProcessoUI, Processo, Tipo, Situacao, DataProcesso, Medida, Descricao, ClienteUI)" +
+                              "VALUES (@ProcessoUI, @Processo, @Tipo, @Situacao, @DataProcesso, @Medida, @Descricao, @ClienteUI);" +
+
+                              "INSERT INTO Financeiro (FinanceiroUI, Valor, DataVencimento, ClienteUI)" +
+                              "VALUES (@FinanceiroUI, @Valor, @DataVencimento, @ClienteUI);";
+
+                              ;
             // Parametros
 
             cmd.Parameters.AddWithValue("@DataCadastro",dadosCadastro.DataCadastro);

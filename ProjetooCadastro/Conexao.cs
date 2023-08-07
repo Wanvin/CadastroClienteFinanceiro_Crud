@@ -15,7 +15,7 @@ namespace CadastroCliente
         public Conexao()
         {
 
-            con.ConnectionString = "Server = DESKTOP-K20HCFL\\SQLEXPRESS; Database = CadastroCliente; Integrated Security=SSPI;Persist Security Info=False;";
+            con.ConnectionString = "Server = DESKTOP-K20HCFL\\SQLEXPRESS; Database = ClientControl; Integrated Security=SSPI;Persist Security Info=False;";
         }
 
         public SqlConnection conectar()
